@@ -1,6 +1,6 @@
 .outer{
     height:100vh;
-    background: linear-gradient(to top, #c9c9ff 50%, #6e6ef6 90%) no-repeat;
+    background: linear-gradient(to top, #b2ddf4 50%, #0777ab 90%) no-repeat;
 }
 
 .panel-heading{
@@ -44,12 +44,12 @@ a:hover{
     align-items: center;
     cursor: pointer;
     border: 1px solid #ddd;
-    color: #4343ff;
+    color: #2473a0;
 }
 
 .input-field.error{
     border: 1px solid red;
-color: red;
+    color: red;
 }
 
 input[type='text'],
@@ -85,4 +85,42 @@ img{
     left: 33%;
     background-color: #fff;
     padding: 0 8px;
+}
+
+.section-1{
+    width: 1000px;
+    height: 500px;
+    background-image: url(TravelHome.JPG);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.section-2{
+    width: 200px;
+    height: 300px;
+    float: right;
+    background-image: url(Xcaret1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.wrapper{
+    margin: 200px;
+    width: 70%;
+    position: center;
+
+}
+
+.page-title{
+    text-align: center;
+    font-size: 42px;
+    padding-top: 100px;
+}
+.text-box p{
+    font-size: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
