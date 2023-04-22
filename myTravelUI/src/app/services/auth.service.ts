@@ -6,7 +6,7 @@ import {HttpClient} from "@angular/common/http"
 })
 export class AuthService {
 
-  private baseUrl: string ="https://localhost:7032/api/User"
+  private baseUrl: string ="https://localhost:4200/api/User"
   constructor(private http: HttpClient) { }
 
   signUp(userObj: any){
