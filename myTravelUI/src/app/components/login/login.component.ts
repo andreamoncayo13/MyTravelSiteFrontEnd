@@ -44,8 +44,6 @@ export class LoginComponent implements OnInit {
     }
   }
 
- 
-
   ngOnInit(): void {
     this.loginError = '';
      this.loginForm = this.fb.group({
@@ -53,6 +51,7 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
      }) 
   }
+
   hideShowPass(){
     this.isText = !this.isText;
     this.isText ? this.eyeIcon = "fa-eye" : this.eyeIcon = "fa-eye-slash";
