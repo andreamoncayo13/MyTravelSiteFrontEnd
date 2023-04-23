@@ -285,3 +285,26 @@ img{
     border: 1px solid #ddd;
     color:#0777ab
 }
+
+.comment-form button{
+    margin: 10px 0;
+    border: none;
+    background-color: #d0d0d0;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 3px;
+    color: #444;
+}
+
+.button:hover{
+    color: white;
+    background-color: #444;
+}
+
+@media(max-width: 900px){
+    .comment-box{
+        width: 80%;
+        margin: 5%;
+    }
+}
+   
