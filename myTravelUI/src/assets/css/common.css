@@ -125,7 +125,6 @@ img{
     padding-right: 50px;
 }
 
-
 /*--blog--------------------------*/
 #blog{
     display: flex;
@@ -208,7 +207,6 @@ img{
     transition: all ease 0.3s;
 }
  
- 
 @media(max-width:1250px){
  
     .blog-box{
@@ -230,4 +228,31 @@ img{
     #blog{
         padding:20px;
     }
+}
+
+.vlogImg1 {
+    width: 200px;
+    height: 100px;
+    background-image: url(ElBesoView.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.vlogImg2 {
+    width: 200px;
+    height: 100px;
+    background-image: url(XcaretFood.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.vlogImg3 {
+    width: 200px;
+    height: 100px;
+    background-image: url(LagunaMarView.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
