@@ -16,4 +16,8 @@ export class AuthService {
   login(loginObj:any){
     return this.http.post<any>(`${this.baseUrl}authenticate`,loginObj);
   }
+
+  comment(commentObj:any){
+    return this.http.post<any>(`${this.baseUrl}create`,commentObj);
+  }
 }
