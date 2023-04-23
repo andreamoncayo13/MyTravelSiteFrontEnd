@@ -21,18 +21,15 @@ export class LoginComponent implements OnInit {
   onLogin() {
     this.loginError = '';
     if (this.loginForm.valid){
-      console.log(this.loginForm.value)
       // Send the obj to the database
       this.auth.login(this.loginForm.value)
       .subscribe({
         next:(res)=>{
-          console.log(res.message);
+          sessionStorage.setItem('userName',this.loginForm.value.username);
           this.loginForm.reset();
-          this.router.navigate(['dashboard'])
+          this.router.navigate(['comment'])
         },
         error:(err)=>{
-          console.log('got here');
-          console.log(err?.error.message)
           this.loginError = err?.error.message;
         }
       })

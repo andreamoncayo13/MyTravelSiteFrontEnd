@@ -15,6 +15,7 @@ export class SignupComponent implements OnInit {
   isText: boolean = false;
   eyeIcon: string = "fa-eye-slash";
   signUpForm!: FormGroup;
+  signupError: string = "";
   constructor (private fb :FormBuilder, private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {  
@@ -42,7 +43,7 @@ export class SignupComponent implements OnInit {
           this.router.navigate(['login']);
         })
         ,error:(err=>{
-          console.log(err?.error.message)
+          this.signupError = err.error;
         })
       })
       console.log(this.signUpForm.value)

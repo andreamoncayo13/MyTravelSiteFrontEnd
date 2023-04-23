@@ -17,6 +17,7 @@
         <div class="blog-heading">
           <span>My Recent Posts</span>
           <h3>My Blog</h3>
+          <div class="test-center pt-4 text-muted"><a id="forgot" routerLink="#" (click)="onLogout()" id="register-link">Log out</a></div>
         </div>
   
   
@@ -77,12 +78,42 @@
         </div>
   
       </section>
-      <div class="comment-box">
+
+      <div class="comment-box" *ngIf="!showCreateComment">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">UserName</th>
+              <th scope="col">Comment</th>
+              <th scope="col">Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let comment of commentList; let index = index">
+              <th scope="row">{{comment.commentId}}</th>
+              <td>{{comment.userName}}</td>
+              <td>{{comment.comments}}</td>
+              <td>{{comment.createdDate | date: 'MM/dd/yyyy HH:mm:ss'}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <br/>
+        <button (click)="showCreateComment = !showCreateComment" type="submit" class="btn btn-primary btn-block mt-4 w-100">Add Comment</button>
+      </div>
+
+
+      <div class="comment-box" *ngIf="showCreateComment">
         <p>Leave a Comment</p>
-        <form class="comment-form"></form>
-          <input type="text" placeholder="username">
-          <textarea rows="10" placeholder="Write your Comment"></textarea>
-          <button type="submit">Post Comment</button>
+        <form [formGroup]="commentForm">
+          <textarea rows="10" cols="75" placeholder="Write your Comment" formControlName="comments" id="comments"></textarea>
+          <small *ngIf="commentForm.controls['comments'].dirty && commentForm.hasError('required', 'comments')" class="text-danger">*Comment is required</small>
+          <br/>
+          <div *ngIf="commentError" class="alert alert-danger" role="alert">
+              {{commentError}}
+          </div>
+          <button (click)="onCreateComment()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Submit</button>
+      </form>
       </div>
       
 </body>
