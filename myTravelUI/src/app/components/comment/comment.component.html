@@ -1,122 +1,134 @@
 <!--doctype html-->
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE-edge">
-<meta name="viewport" content="width=device-width, intial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Blog Section</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, intial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Vlog Section</title>
 
-<!--poppins-font-family-------------------------->
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <!--poppins-font-family-------------------------->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
+  <div class="outer">
     <!--blog-section============================================================================-->
-    <section id="vlog">
-        <!--blog-heading--------------->
-        <div class="blog-heading">
-          <span>My Recent Posts</span>
-          <h3>My Blog</h3>
-          <div class="test-center pt-4 text-muted"><a id="forgot" routerLink="#" (click)="onLogout()" id="register-link">Log out</a></div>
-        </div>
-  
-  
-        <!--container---------------->
-        <div class="blog-container">
-  
-          <!--box-1------------->
-          <div class="blog-box">
-  
-            <!--img---->
-            <div class="blog-img">
-              <img src="assets/images/ElBesoView.jpg" alt="blog">
-            </div>
-            <!--text--->
-            <div class="blog-text">
-              <span>10 August 2020 / Playa del Carmen </span>
-              <a href="https://www.oceanhotels.net/en/riviera-maya-hotels/ocean-riviera-paradise/" class="blog-title">Ocean Riviera Paradise El Beso</a>
-              <p> El Beso is the Adults Only section where the DJ keeps the party atmosphere going by the pool.</p>
-            </div>
-  
-          </div>
-    
-  
-          <!--box-2------------->
-          <div class="blog-box">
-  
-            <!--img---->
-            <div class="blog-img">
-              <img src="assets/images/XcaretFood.jpg" alt="blog">
-            </div>
-            <!--text--->
-            <div class="blog-text">
-              <span>15 August 2020 / Playa del Carmen</span>
-              <a href="https://www.hotelxcaretmexico.com/en/gastronomy/" class="blog-title">Las Cuevas Restaruant</a>
-              <p>This beautiful rodizio style steakhouse is part of the Hotel Xcaret Mexico complex in Playa del Carmen.</p>
-            </div>
-  
-          </div>
-    
-  
-  
-          <!--box-3------------->
-          <div class="blog-box">
-  
-            <!--img---->
-            <div class="blog-img">
-              <img src="assets/images/LagunaMarView.jpg" alt="blog">
-            </div>
-            <!--text--->
-            <div class="blog-text">
-              <span>03 September 2022 / Cancun, Mexico</span>
-              <a href="https://www.marriott.com/en-us/hotels/cunwl-the-westin-lagunamar-ocean-resort-villas-and-spa-cancun/overview/" class="blog-title">Westin Laguna Mar Cancun</a>
-              <p> This hotel is located in the heart of the Hotel Zone. Every room has a view of the ocean & some have washers & dryers.</p>
-            </div>
-  
-          </div>
-  
-        </div>
-  
-      </section>
-
-      <div class="comment-box" *ngIf="!showCreateComment">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">UserName</th>
-              <th scope="col">Comment</th>
-              <th scope="col">Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let comment of commentList; let index = index">
-              <th scope="row">{{comment.commentId}}</th>
-              <td>{{comment.userName}}</td>
-              <td>{{comment.comments}}</td>
-              <td>{{comment.createdDate | date: 'MM/dd/yyyy HH:mm:ss'}}</td>
-            </tr>
-          </tbody>
-        </table>
-        <br/>
-        <button (click)="showCreateComment = !showCreateComment" type="submit" class="btn btn-primary btn-block mt-4 w-100">Add Comment</button>
+    <section id="vlog">     
+      <!--blog-heading--------------->
+      <div class="blog-heading">
+        <h3>My Vlog</h3>
+           
       </div>
 
 
-      <div class="comment-box" *ngIf="showCreateComment">
-        <p>Leave a Comment</p>
-        <form [formGroup]="commentForm">
-          <textarea rows="10" cols="75" placeholder="Write your Comment" formControlName="comments" id="comments"></textarea>
-          <small *ngIf="commentForm.controls['comments'].dirty && commentForm.hasError('required', 'comments')" class="text-danger">*Comment is required</small>
-          <br/>
-          <div *ngIf="commentError" class="alert alert-danger" role="alert">
-              {{commentError}}
+      <!--container---------------->
+      <div class="blog-container">
+
+        <!--box-1------------->
+        <div class="blog-box">
+
+          <!--img---->
+          <div class="blog-img">
+            <img src="assets/images/ElBesoView.jpg" alt="blog">
           </div>
-          <button (click)="onCreateComment()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Submit</button>
+          <!--text--->
+          <div class="blog-text">
+            <span>10 August 2020 / Playa del Carmen </span>
+            <a href="https://www.oceanhotels.net/en/riviera-maya-hotels/ocean-riviera-paradise/"
+              class="blog-title">Ocean Riviera Paradise El Beso</a>
+            <p> El Beso is the Adults Only section where the DJ keeps the party atmosphere going by the pool.</p>
+          </div>
+
+        </div>
+
+
+        <!--box-2------------->
+        <div class="blog-box">
+
+          <!--img---->
+          <div class="blog-img">
+            <img src="assets/images/XcaretFood.jpg" alt="blog">
+          </div>
+          <!--text--->
+          <div class="blog-text">
+            <span>15 August 2020 / Playa del Carmen</span>
+            <a href="https://www.hotelxcaretmexico.com/en/gastronomy/" class="blog-title">Las Cuevas Restaruant</a>
+            <p>This beautiful rodizio style steakhouse is part of the Hotel Xcaret Mexico complex in Playa del Carmen.
+            </p>
+          </div>
+
+        </div>
+
+
+
+        <!--box-3------------->
+        <div class="blog-box">
+
+          <!--img---->
+          <div class="blog-img">
+            <img src="assets/images/LagunaMarView.jpg" alt="blog">
+          </div>
+          <!--text--->
+          <div class="blog-text">
+            <span>03 September 2022 / Cancun, Mexico</span>
+            <a href="https://www.marriott.com/en-us/hotels/cunwl-the-westin-lagunamar-ocean-resort-villas-and-spa-cancun/overview/"
+              class="blog-title">Westin Laguna Mar Cancun</a>
+            <p> This hotel is located in the heart of the Hotel Zone. Every room has a view of the ocean & some have
+              washers & dryers.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <div class="comment-box" *ngIf="!showCreateComment">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">UserName</th>
+            <th scope="col">Comment</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let comment of commentList; let index = index">
+            <th scope="row">{{comment.commentId}}</th>
+            <td>{{comment.userName}}</td>
+            <td>{{comment.comments}}</td>
+            <td>{{comment.createdDate | date: 'MM/dd/yyyy HH:mm:ss'}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <button (click)="showCreateComment = !showCreateComment" type="submit"
+        class="btn btn-primary btn-block mt-4 w-100">Add Comment</button>
+    </div>
+
+
+    <div class="comment-box" *ngIf="showCreateComment">
+      <p>Leave a Comment</p>
+      <form [formGroup]="commentForm">
+        <textarea rows="10" cols="75" placeholder="Write your Comment" formControlName="comments"
+          id="comments"></textarea>
+        <small *ngIf="commentForm.controls['comments'].dirty && commentForm.hasError('required', 'comments')"
+          class="text-danger">*Comment is required</small>
+        <br />
+        <div *ngIf="commentError" class="alert alert-danger" role="alert">
+          {{commentError}}
+        </div>
+        <button (click)="onCreateComment()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Submit</button>
       </form>
-      </div>
-      
+    </div>
+    <button id="logout" (click)="onLogout() "type="submit" class="logout button">Log out</button>
+  </div>
 </body>
+
+
 </html>
-  
-  
