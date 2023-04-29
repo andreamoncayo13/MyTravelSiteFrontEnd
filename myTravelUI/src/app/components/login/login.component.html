@@ -50,9 +50,6 @@
                             <div *ngIf="loginError" class="alert alert-danger" role="alert">
                                 {{loginError}}
                             </div>
-                            <div class = "form-inline fr mt-4">
-                                <a id="forgot" class="font-weight-bold">Forgot Password?</a>
-                            </div>
                             <button (click)="onLogin() "type="submit" class="btn btn-primary btn-block mt-4 w-100">Login</button>
                             <div class="test-center pt-4 text-muted">Don't have an account? <a id="forgot" routerLink="/register" id="register-link">Register</a></div>
                         </form>
