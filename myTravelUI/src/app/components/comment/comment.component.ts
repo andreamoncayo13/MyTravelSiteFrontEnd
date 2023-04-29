@@ -24,9 +24,7 @@ export class CommentComponent implements OnInit{
   ngOnInit() {
     this.createCommentError = undefined;
     this.titleService.setTitle(this.title);
-    let currentUser = this.auth.getCurrentUser();
-    console.log(currentUser);
-    if(currentUser === undefined || currentUser === null){
+    if(!this.auth.isLoggedIn()){
       location.pathname = ('/login');
     }
 
@@ -40,6 +38,10 @@ export class CommentComponent implements OnInit{
   onLogout(){
     this.auth.logOut();
     location.pathname = ('/login');
+  }
+
+  isLoggedIn():boolean{
+    return this.auth.isLoggedIn();
   }
 
   onCreateComment() {

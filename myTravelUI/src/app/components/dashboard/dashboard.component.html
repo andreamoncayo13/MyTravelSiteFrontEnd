@@ -1,5 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/comment">Vlog</a>
+        </li>
+        <li class="nav-item" *ngIf="!isLoggedIn()">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn()">
+          <a class="nav-link" (click)="onLogout()" href="#">Log out</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
 <div class="outer">
-    <div class="test-center pt-4 text-muted"><a routerLink="/register" id="register-link">Registration Page</a></div>   
     <div id="dashboard-title" class="page-title">
     <p >My Travel Site</p>
     </div>
@@ -11,13 +33,13 @@
                 Here you will find breathtaking images or beautiful landscapes and delicious food from around the world.  
                 Keep checking the site periodically so you don’t miss out on vacation ideas and make sure to register 
                 so you can have access to provide feedback or suggestions for future destinations.</p>
-                <div class="section-1"></div>
-        </div>
-
-
-        <div class="text-center pt-4 text-muted">Already have an account?<a id="forgot"
-            routerLink="/login"> Login</a>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+          <img src="assets/images/TravelHome.jpg" class="img-responsive" alt="Travel Home">
+        </div>
+    </div>
+    <br/><br/>
 
 </div>           

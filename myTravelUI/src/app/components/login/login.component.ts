@@ -55,4 +55,13 @@ export class LoginComponent implements OnInit {
     this.isText ? this.type = "text" : this.type = "password";
   }
 
+  onLogout(){
+    this.auth.logOut();
+    location.pathname = ('/login');
+  }
+
+  isLoggedIn():boolean{
+    return this.auth.isLoggedIn();
+  }
+
 }

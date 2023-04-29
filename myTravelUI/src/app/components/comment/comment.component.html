@@ -15,6 +15,28 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/comment">Vlog <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item" *ngIf="!isLoggedIn()">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="isLoggedIn()">
+          <a class="nav-link" (click)="onLogout()" href="#">Log out</a>
+        </li>
+      </ul>
+    </div>
+</nav>
   <div class="outer">
     <!--blog-section============================================================================-->
     <section id="vlog">     
@@ -126,7 +148,7 @@
         <button (click)="onCreateComment()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Submit</button>
       </form>
     </div>
-    <button id="logout" (click)="onLogout() "type="submit" class="logout button">Log out</button>
+    <br><br><br>
   </div>
 </body>
 

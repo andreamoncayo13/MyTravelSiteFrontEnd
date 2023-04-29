@@ -1,3 +1,3 @@
 export const environment = {
-    baseUrl : 'https://localhost:9090/api'
+    baseUrl : 'http://my-travel-site.eastus.cloudapp.azure.com//api/api'
 };

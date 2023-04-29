@@ -25,4 +25,9 @@ export class AuthService {
   logOut(){
     sessionStorage.clear();
   }
+
+  isLoggedIn():boolean{
+    let currentUser = this.getCurrentUser();
+    return !(currentUser === undefined || currentUser === null);
+  }
 }
